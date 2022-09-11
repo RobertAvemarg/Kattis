@@ -18,5 +18,7 @@ My solutions for some problems from [Kattis](https://open.kattis.com/)
 |[Reverse](https://open.kattis.com/problems/ofugsnuid)                                          |[Java](Java/Reverse/Reverse.java)|
 |[Scrolling Sign](https://open.kattis.com/problems/scrollingsign)                               |[Java](Java/ScrollingSign/ScrollingSign.java)|
 |[Sibice](https://open.kattis.com/problems/sibice)                                              |[Java](Java/Sibice/Sibice.java)|
+|[Simon Says](https://open.kattis.com/problems/simon)                                           |[Java](Java/SimonSays/SimonSays.java)|
+|[SMIL](https://open.kattis.com/problems/smil)                                                  |[Java](Java/SMIL/SMIL.java)|
 |[Speed Limit](https://open.kattis.com/problems/speedlimit)                                     |[Java](Java/SpeedLimit/SpeedLimit.java)|
 |[Turn It Up!](https://open.kattis.com/problems/skruop)                                         |[Java](Java/TurnItUp/Skruop.java)|
