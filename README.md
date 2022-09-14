@@ -13,6 +13,7 @@ My solutions for some problems from [Kattis](https://open.kattis.com/)
 |[Homework](https://open.kattis.com/problems/heimavinna)                                        |[Java](Java/Homework/Homework.java)|
 |[Jack-O'-Lantern Juxtaposition](https://open.kattis.com/problems/jackolanternjuxtaposition)    |[Python](Python/jack-o-lantern/jack-o-lantern.py)|
 |[Odd Echo](https://open.kattis.com/problems/oddecho)                                           |[Java](Java/OddEcho/OddEcho.java)|
+|[Polygon Area](https://open.kattis.com/problems/polygonarea)                                   |[Java](Java/Polygon%20Area/PolygonArea.java)|
 |[Pot](https://open.kattis.com/problems/pot)                                                    |[Python](Python/pot/pot.py)|
 |[Building Pyramids](https://open.kattis.com/problems/pyramids)                                 |[Java](Java/BuildingPyradminds/Pyramids.java)|
 |[Reverse](https://open.kattis.com/problems/ofugsnuid)                                          |[Java](Java/Reverse/Reverse.java)|
@@ -21,4 +22,5 @@ My solutions for some problems from [Kattis](https://open.kattis.com/)
 |[Simon Says](https://open.kattis.com/problems/simon)                                           |[Java](Java/SimonSays/SimonSays.java)|
 |[SMIL](https://open.kattis.com/problems/smil)                                                  |[Java](Java/SMIL/SMIL.java)|
 |[Speed Limit](https://open.kattis.com/problems/speedlimit)                                     |[Java](Java/SpeedLimit/SpeedLimit.java)|
+|[Symmetric Order](https://open.kattis.com/problems/symmetricorder)                             |[Java](Java/Symmetric%20Order/SymmetricOrder.java)|
 |[Turn It Up!](https://open.kattis.com/problems/skruop)                                         |[Java](Java/TurnItUp/Skruop.java)|
