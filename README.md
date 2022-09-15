@@ -14,6 +14,7 @@ My solutions for some problems from [Kattis](https://open.kattis.com/)
 |[Homework](https://open.kattis.com/problems/heimavinna)                                        |[Java](Java/Homework/Homework.java)|
 |[Jack-O'-Lantern Juxtaposition](https://open.kattis.com/problems/jackolanternjuxtaposition)    |[Python](Python/jack-o-lantern/jack-o-lantern.py)|
 |[Odd Echo](https://open.kattis.com/problems/oddecho)                                           |[Java](Java/OddEcho/OddEcho.java)|
+|[Parking](https://open.kattis.com/problems/parking2)                                           |[Java](Java/Parking/Parking.java)|
 |[Polygon Area](https://open.kattis.com/problems/polygonarea)                                   |[Java](Java/Polygon%20Area/PolygonArea.java)|
 |[Pot](https://open.kattis.com/problems/pot)                                                    |[Python](Python/pot/pot.py)|
 |[Building Pyramids](https://open.kattis.com/problems/pyramids)                                 |[Java](Java/BuildingPyradminds/Pyramids.java)|
