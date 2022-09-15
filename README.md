@@ -6,6 +6,7 @@ My solutions for some problems from [Kattis](https://open.kattis.com/)
 | --- | --- |
 |[A Different Problem](https://open.kattis.com/problems/different)                              |[Java](Java/A%20Different%20Problem/Difference.java)|
 |[Accounting](https://open.kattis.com/problems/bokforing)                                       |[Java](Java/Accounting/Accounting.java)|
+|[Another Candies](https://open.kattis.com/problems/anothercandies)                             |[Java](Java/AnotherCandies/AnotherCandies.java)|
 |[Bijele](https://open.kattis.com/problems/bijele)                                              |[Java](Java/Bijele/Bijele.java)|
 |[Cold-puter Science](https://open.kattis.com/problems/cold)                                    |[Java](Java/Cold-puterScience/Cold.java)|
 |[Greetings!](https://open.kattis.com/problems/greetings2)                                      |[Python](Python/greetings/greetings.py)|
