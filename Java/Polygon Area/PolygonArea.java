@@ -5,6 +5,8 @@ public class PolygonArea {
         Scanner scanner = new Scanner(System.in);
 
         arraySolution(scanner);
+
+        scanner.close();
     }
 
     public static void variableSolution(Scanner scanner) {
@@ -42,8 +44,6 @@ public class PolygonArea {
 
             numPoints = scanner.nextInt();
         }
-
-        scanner.close();
     }
 
 
@@ -64,8 +64,6 @@ public class PolygonArea {
 
             numPoints = scanner.nextInt();
         }
-
-        scanner.close();
     }
 
     private static double calculateArea(int[] x, int[] y) {
