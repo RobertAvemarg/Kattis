@@ -4,52 +4,65 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BasicProgramming {
     public static void main(String[] args) throws IOException{
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        int operation = Integer.parseInt(bufferedReader.readLine().split(" ")[1]);
+        int inputOperation = Integer.parseInt(bufferedReader.readLine().split(" ")[1]);
         int[] data = Arrays.stream(bufferedReader.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
         bufferedReader.close();
 
-        if (operation == Operations.PRINT_SEVEN.getId()) {
-            printSeven();
+        Operation operation = new GetSeven();
+
+        switch (inputOperation) {
+            case 2:
+                operation = new CompareFirstTwoElements();
+                break;
+            case 3:
+                operation = new CalculateMedianOfFirstThreeElements();
+                break;
+            case 4:
+                operation = new SumElements();
+                break;
+            case 5:
+                operation = new SumEvenElements();
+                break;
+            case 6:
+                operation = new ConvertElementsToString();
+                break;
+            case 7:
+                operation = new WalkThroughIndices();
+                break;
         }
 
-        if (operation == Operations.COMPARE_FIRST_TWO_ELEMENTS.getId()) {
-            System.out.println(compareFirstTwoElements(data));
-        }
-
-        if (operation == Operations.CALCULATE_MEDIAN_OF_FIRST_THREE_ELEMENTS.getId()) {
-            System.out.println(calculateMedianOfFirstThreeElements(data));
-        }
-
-        if (operation == Operations.SUM_ELEMENTS.getId()) {
-            System.out.println(sumElements(data));
-        }
-
-        if (operation == Operations.SUM_EVEN_ELEMENTS.getId()) {
-            System.out.println(sumEvenElements(data));
-        }
-
-        if (operation == Operations.PRINT_ELEMENTS_AS_CHARS.getId()) {
-            printElementsAsChars(data);
-        }
-
-        if (operation == Operations.WALK_THROUGH_INDICES.getId()) {
-            walkThroughIndices(data);
-        }
+        System.out.println(operation.execute(data));
     }
+}
 
 
-    private static void printSeven() {
-        System.out.println("7");
+interface Operation {
+    abstract public String execute(int[] data);
+}
+
+
+class GetSeven implements Operation {
+    public GetSeven() {}
+
+    @Override
+    public String execute(int[] data) {
+        return "7";
     }
+}
 
 
-    private static String compareFirstTwoElements(int[] data) {
+class CompareFirstTwoElements implements Operation {
+    public CompareFirstTwoElements() {}
+
+    @Override
+    public String execute(int[] data) {
         if (data[0] > data[1]) {
             return "Bigger";
         }
@@ -58,30 +71,64 @@ public class BasicProgramming {
         }
         return "Smaller";
     }
+}
 
 
-    private static int calculateMedianOfFirstThreeElements(int[] data) {
-        return Arrays.stream(data).limit(3).sorted().skip(1).limit(1).toArray()[0];
+class CalculateMedianOfFirstThreeElements implements Operation {
+    public CalculateMedianOfFirstThreeElements() {}
+
+    @Override
+    public String execute(int[] data) {
+        return String.valueOf(Arrays.stream(data)
+                                    .limit(3)
+                                    .sorted()
+                                    .skip(1)
+                                    .limit(1)
+                                    .toArray()[0]);
     }
+}
 
 
-    private static long sumElements(int[] data) {
-        return Arrays.stream(data).mapToLong(e -> e).reduce(0, Long::sum);
+class SumElements implements Operation {
+    public SumElements() {}
+
+    @Override
+    public String execute(int[] data) {
+        return String.valueOf(Arrays.stream(data)
+                                    .mapToLong(e -> e)
+                                    .reduce(0, Long::sum));
     }
+}
 
 
-    private static long sumEvenElements(int[] data) {
-        return Arrays.stream(data).filter(e -> e % 2 == 0).mapToLong(e -> e).reduce(0, Long::sum);
+class SumEvenElements implements Operation {
+    public SumEvenElements() {}
+
+    @Override
+    public String execute(int[] data) {
+        return String.valueOf(Arrays.stream(data)
+                                    .filter(e -> e % 2 == 0)
+                                    .mapToLong(e -> e)
+                                    .reduce(0, Long::sum));
     }
+}
 
 
-    private static void printElementsAsChars(int[] data) {
-        Arrays.stream(data).map(e -> (e % 26) + 97).mapToObj(e ->(char)e).forEach(e -> System.out.print(e));
-        System.out.println();
+class ConvertElementsToString implements Operation {
+    public ConvertElementsToString() {}
+
+    @Override
+    public String execute(int[] data) {
+        return Arrays.stream(data).map(e -> (e % 26) + 97).mapToObj(e -> String.valueOf((char)e)).collect(Collectors.joining());
     }
+}
 
 
-    private static void walkThroughIndices(int[] data) {
+class WalkThroughIndices implements Operation {
+    public WalkThroughIndices() {}
+
+    @Override
+    public String execute(int[] data) {
         int arrayLength = data.length;
         Set<Integer> visitedIndices = new HashSet<Integer>();
 
@@ -89,43 +136,19 @@ public class BasicProgramming {
 
         while (true) {
             if (currentIndex >= arrayLength) {
-                System.out.println("Out");
-                break;
+                return "Out";
             }
 
             if (currentIndex == arrayLength - 1) {
-                System.out.println("Done");
-                break;
+                return "Done";
             }
 
             if (visitedIndices.contains(currentIndex)) {
-                System.out.println("Cyclic");
-                break;
+                return "Cyclic";
             }
 
             visitedIndices.add(currentIndex);
             currentIndex = data[currentIndex];
         }
-    }
-}
-
-
-enum Operations {
-    PRINT_SEVEN(1),
-    COMPARE_FIRST_TWO_ELEMENTS(2),
-    CALCULATE_MEDIAN_OF_FIRST_THREE_ELEMENTS(3),
-    SUM_ELEMENTS(4),
-    SUM_EVEN_ELEMENTS(5),
-    PRINT_ELEMENTS_AS_CHARS(6),
-    WALK_THROUGH_INDICES(7);
-
-    private int id;
-
-    private Operations(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
     }
 }
